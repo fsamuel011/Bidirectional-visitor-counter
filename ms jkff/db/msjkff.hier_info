@@ -1,0 +1,7 @@
+|pirtester
+pin_name3 <= pin_name1.DB_MAX_OUTPUT_PORT_TYPE
+pin_name1 => pin_name3.DATAIN
+pin_name4 <= pin_name2.DB_MAX_OUTPUT_PORT_TYPE
+pin_name2 => pin_name4.DATAIN
+
+
