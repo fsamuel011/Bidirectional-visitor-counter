@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Apr  3 13:21:03 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition
+Revision Name : addition
+Top-level Entity Name : 8bitaddition
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 4 / 240 ( 2 % )
+Total pins : 13 / 80 ( 16 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
