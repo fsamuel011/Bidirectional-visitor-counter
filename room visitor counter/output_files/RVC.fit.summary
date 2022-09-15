@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Sep  8 17:35:21 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition
+Revision Name : RVC
+Top-level Entity Name : RVCcounter
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 156 / 240 ( 65 % )
+Total pins : 26 / 80 ( 33 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

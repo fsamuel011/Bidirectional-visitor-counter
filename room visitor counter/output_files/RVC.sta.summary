@@ -1,0 +1,49 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'inst2'
+Slack : -7.455
+TNS   : -83.772
+
+Type  : Setup 'Sensor1'
+Slack : -7.080
+TNS   : -121.086
+
+Type  : Setup 'Sensor2'
+Slack : -6.956
+TNS   : -119.705
+
+Type  : Hold 'Sensor2'
+Slack : -3.378
+TNS   : -58.842
+
+Type  : Hold 'Sensor1'
+Slack : -3.254
+TNS   : -55.866
+
+Type  : Hold 'inst2'
+Slack : 0.601
+TNS   : 0.000
+
+Type  : Recovery 'inst2'
+Slack : -7.735
+TNS   : -7.735
+
+Type  : Removal 'inst2'
+Slack : 0.098
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Sensor2'
+Slack : -2.576
+TNS   : -266.053
+
+Type  : Minimum Pulse Width 'Sensor1'
+Slack : -2.576
+TNS   : -252.659
+
+Type  : Minimum Pulse Width 'inst2'
+Slack : 0.096
+TNS   : 0.000
+
+------------------------------------------------------------

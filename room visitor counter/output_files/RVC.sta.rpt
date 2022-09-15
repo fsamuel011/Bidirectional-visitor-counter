@@ -1,0 +1,816 @@
+Timing Analyzer report for RVC
+Thu Sep  8 17:35:30 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'inst2'
+ 12. Setup: 'Sensor1'
+ 13. Setup: 'Sensor2'
+ 14. Hold: 'Sensor2'
+ 15. Hold: 'Sensor1'
+ 16. Hold: 'inst2'
+ 17. Recovery: 'inst2'
+ 18. Removal: 'inst2'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                   ;
++-----------------------+-------------------------------------------------------------------+
+; Quartus Prime Version ; Version 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                            ;
+; Revision Name         ; RVC                                                               ;
+; Device Family         ; MAX II                                                            ;
+; Device Name           ; EPM240T100C5                                                      ;
+; Timing Models         ; Final                                                             ;
+; Delay Model           ; Slow Model                                                        ;
+; Rise/Fall Delays      ; Unavailable                                                       ;
++-----------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; inst2      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { inst2 }   ;
+; Sensor1    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Sensor1 } ;
+; Sensor2    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Sensor2 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 67.06 MHz  ; 67.06 MHz       ; Sensor1    ;      ;
+; 67.06 MHz  ; 67.06 MHz       ; Sensor2    ;      ;
+; 125.75 MHz ; 125.75 MHz      ; inst2      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Setup Summary                    ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; inst2   ; -7.455 ; -83.772       ;
+; Sensor1 ; -7.080 ; -121.086      ;
+; Sensor2 ; -6.956 ; -119.705      ;
++---------+--------+---------------+
+
+
++----------------------------------+
+; Hold Summary                     ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; Sensor2 ; -3.378 ; -58.842       ;
+; Sensor1 ; -3.254 ; -55.866       ;
+; inst2   ; 0.601  ; 0.000         ;
++---------+--------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; inst2 ; -7.735 ; -7.735        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; inst2 ; 0.098 ; 0.000         ;
++-------+-------+---------------+
+
+
++----------------------------------+
+; Minimum Pulse Width Summary      ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; Sensor2 ; -2.576 ; -266.053      ;
+; Sensor1 ; -2.576 ; -252.659      ;
+; inst2   ; 0.096  ; 0.000         ;
++---------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'inst2'                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.455 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.389     ; 1.333      ;
+; -7.424 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.377     ; 1.305      ;
+; -7.331 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.265     ; 1.333      ;
+; -7.300 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.253     ; 1.305      ;
+; -7.203 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.383     ; 0.948      ;
+; -7.079 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.259     ; 0.948      ;
+; -6.962 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.384     ; 0.505      ;
+; -6.924 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.384     ; 0.505      ;
+; -6.887 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.383     ; 0.962      ;
+; -6.841 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.383     ; 0.505      ;
+; -6.839 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.384     ; 0.505      ;
+; -6.838 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.260     ; 0.505      ;
+; -6.833 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; -4.382     ; 0.927      ;
+; -6.813 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.382     ; 0.930      ;
+; -6.803 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.382     ; 0.928      ;
+; -6.800 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.260     ; 0.505      ;
+; -6.788 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; inst2       ; 0.500        ; -4.383     ; 0.505      ;
+; -6.763 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.259     ; 0.962      ;
+; -6.717 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.259     ; 0.505      ;
+; -6.715 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.260     ; 0.505      ;
+; -6.709 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; -4.258     ; 0.927      ;
+; -6.689 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.258     ; 0.930      ;
+; -6.679 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.258     ; 0.928      ;
+; -6.664 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; inst2       ; 0.500        ; -4.259     ; 0.505      ;
+; -3.476 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.410     ; 1.333      ;
+; -3.445 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.398     ; 1.305      ;
+; -3.224 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.404     ; 0.948      ;
+; -2.983 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.405     ; 0.505      ;
+; -2.945 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.405     ; 0.505      ;
+; -2.908 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.404     ; 0.962      ;
+; -2.862 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.404     ; 0.505      ;
+; -2.860 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.405     ; 0.505      ;
+; -2.854 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; inst2       ; 0.500        ; -0.403     ; 0.927      ;
+; -2.834 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.403     ; 0.930      ;
+; -2.824 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.403     ; 0.928      ;
+; -2.809 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; inst2       ; 0.500        ; -0.404     ; 0.505      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Sensor1'                                                                                                                                     ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.080 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -2.841     ; 1.331      ;
+; -6.956 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -2.717     ; 1.331      ;
+; -6.601 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -3.982     ; 1.287      ;
+; -6.558 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -3.559     ; 0.962      ;
+; -6.477 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -3.858     ; 1.287      ;
+; -6.436 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -3.199     ; 1.355      ;
+; -6.434 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -3.435     ; 0.962      ;
+; -6.312 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -3.075     ; 1.355      ;
+; -6.094 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -3.200     ; 0.945      ;
+; -5.970 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -3.076     ; 0.945      ;
+; -5.762 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -3.201     ; 0.505      ;
+; -5.703 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -3.199     ; 0.963      ;
+; -5.638 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -3.077     ; 0.505      ;
+; -5.636 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -3.201     ; 0.505      ;
+; -5.621 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -3.200     ; 0.505      ;
+; -5.611 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -3.199     ; 0.928      ;
+; -5.579 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -3.075     ; 0.963      ;
+; -5.512 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -3.077     ; 0.505      ;
+; -5.497 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -3.076     ; 0.505      ;
+; -5.487 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -3.075     ; 0.928      ;
+; -5.300 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -3.201     ; 0.505      ;
+; -5.176 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -3.077     ; 0.505      ;
+; -4.960 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -2.418     ; 0.505      ;
+; -4.836 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -2.294     ; 0.505      ;
+; -4.467 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.401     ; 1.333      ;
+; -4.436 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.389     ; 1.305      ;
+; -4.343 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.277     ; 1.333      ;
+; -4.312 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.265     ; 1.305      ;
+; -4.215 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.395     ; 0.948      ;
+; -4.091 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.271     ; 0.948      ;
+; -3.974 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.396     ; 0.505      ;
+; -3.936 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.396     ; 0.505      ;
+; -3.899 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.395     ; 0.962      ;
+; -3.853 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.395     ; 0.505      ;
+; -3.851 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.396     ; 0.505      ;
+; -3.850 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.272     ; 0.505      ;
+; -3.845 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; Sensor1     ; 0.500        ; -1.394     ; 0.927      ;
+; -3.825 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.394     ; 0.930      ;
+; -3.815 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.394     ; 0.928      ;
+; -3.812 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.272     ; 0.505      ;
+; -3.800 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; Sensor1     ; 0.500        ; -1.395     ; 0.505      ;
+; -3.775 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.271     ; 0.962      ;
+; -3.729 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.271     ; 0.505      ;
+; -3.727 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.272     ; 0.505      ;
+; -3.721 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; Sensor1     ; 0.500        ; -1.270     ; 0.927      ;
+; -3.701 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.270     ; 0.930      ;
+; -3.691 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.270     ; 0.928      ;
+; -3.676 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; Sensor1     ; 0.500        ; -1.271     ; 0.505      ;
+; -1.808 ; Sensor2                           ; inst4                             ; Sensor2      ; Sensor1     ; 0.500        ; 4.224      ; 6.199      ;
+; -1.308 ; Sensor2                           ; inst4                             ; Sensor2      ; Sensor1     ; 1.000        ; 4.224      ; 6.199      ;
+; -0.488 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.578      ; 1.333      ;
+; -0.457 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.590      ; 1.305      ;
+; -0.236 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.584      ; 0.948      ;
+; 0.005  ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.583      ; 0.505      ;
+; 0.043  ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.583      ; 0.505      ;
+; 0.080  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.584      ; 0.962      ;
+; 0.126  ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.584      ; 0.505      ;
+; 0.128  ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.583      ; 0.505      ;
+; 0.134  ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; Sensor1     ; 0.500        ; 2.585      ; 0.927      ;
+; 0.154  ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.585      ; 0.930      ;
+; 0.164  ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.585      ; 0.928      ;
+; 0.179  ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; Sensor1     ; 0.500        ; 2.584      ; 0.505      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Sensor2'                                                                                                                                     ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.956 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -2.717     ; 1.331      ;
+; -6.832 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -2.593     ; 1.331      ;
+; -6.477 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -3.858     ; 1.287      ;
+; -6.434 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -3.435     ; 0.962      ;
+; -6.353 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -3.734     ; 1.287      ;
+; -6.312 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -3.075     ; 1.355      ;
+; -6.310 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -3.311     ; 0.962      ;
+; -6.188 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -2.951     ; 1.355      ;
+; -5.970 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -3.076     ; 0.945      ;
+; -5.846 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -2.952     ; 0.945      ;
+; -5.638 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -3.077     ; 0.505      ;
+; -5.579 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -3.075     ; 0.963      ;
+; -5.514 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -2.953     ; 0.505      ;
+; -5.512 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -3.077     ; 0.505      ;
+; -5.497 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -3.076     ; 0.505      ;
+; -5.487 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -3.075     ; 0.928      ;
+; -5.455 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -2.951     ; 0.963      ;
+; -5.388 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -2.953     ; 0.505      ;
+; -5.373 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -2.952     ; 0.505      ;
+; -5.363 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -2.951     ; 0.928      ;
+; -5.176 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -3.077     ; 0.505      ;
+; -5.052 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -2.953     ; 0.505      ;
+; -4.836 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -2.294     ; 0.505      ;
+; -4.712 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -2.170     ; 0.505      ;
+; -4.524 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.458     ; 1.333      ;
+; -4.493 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.446     ; 1.305      ;
+; -4.400 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.334     ; 1.333      ;
+; -4.369 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.322     ; 1.305      ;
+; -4.272 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.452     ; 0.948      ;
+; -4.148 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.328     ; 0.948      ;
+; -4.031 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.453     ; 0.505      ;
+; -3.993 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.453     ; 0.505      ;
+; -3.956 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.452     ; 0.962      ;
+; -3.910 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.452     ; 0.505      ;
+; -3.908 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.453     ; 0.505      ;
+; -3.907 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.329     ; 0.505      ;
+; -3.902 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; Sensor2     ; 0.500        ; -1.451     ; 0.927      ;
+; -3.882 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.451     ; 0.930      ;
+; -3.872 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.451     ; 0.928      ;
+; -3.869 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.329     ; 0.505      ;
+; -3.857 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; Sensor2     ; 0.500        ; -1.452     ; 0.505      ;
+; -3.832 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.328     ; 0.962      ;
+; -3.786 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.328     ; 0.505      ;
+; -3.784 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.329     ; 0.505      ;
+; -3.778 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; Sensor2     ; 0.500        ; -1.327     ; 0.927      ;
+; -3.758 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.327     ; 0.930      ;
+; -3.748 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.327     ; 0.928      ;
+; -3.733 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; Sensor2     ; 0.500        ; -1.328     ; 0.505      ;
+; -1.231 ; Sensor1                           ; inst2                             ; Sensor1      ; Sensor2     ; 0.500        ; 4.014      ; 5.412      ;
+; -0.731 ; Sensor1                           ; inst2                             ; Sensor1      ; Sensor2     ; 1.000        ; 4.014      ; 5.412      ;
+; -0.545 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.521      ; 1.333      ;
+; -0.514 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.533      ; 1.305      ;
+; -0.293 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.527      ; 0.948      ;
+; -0.052 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.526      ; 0.505      ;
+; -0.014 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.526      ; 0.505      ;
+; 0.023  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.527      ; 0.962      ;
+; 0.069  ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.527      ; 0.505      ;
+; 0.071  ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.526      ; 0.505      ;
+; 0.077  ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; Sensor2     ; 0.500        ; 2.528      ; 0.927      ;
+; 0.097  ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.528      ; 0.930      ;
+; 0.107  ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.528      ; 0.928      ;
+; 0.122  ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; Sensor2     ; 0.500        ; 2.527      ; 0.505      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Sensor2'                                                                                                                                      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.378 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.383      ; 0.505      ;
+; -3.378 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.383      ; 0.505      ;
+; -3.377 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.382      ; 0.505      ;
+; -3.377 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.382      ; 0.505      ;
+; -3.377 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.382      ; 0.505      ;
+; -2.977 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 3.982      ; 0.505      ;
+; -2.957 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.384      ; 0.927      ;
+; -2.956 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.384      ; 0.928      ;
+; -2.954 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.384      ; 0.930      ;
+; -2.935 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.383      ; 0.948      ;
+; -2.921 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.383      ; 0.962      ;
+; -2.853 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 3.858      ; 0.505      ;
+; -2.584 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; Sensor2     ; -0.500       ; 4.389      ; 1.305      ;
+; -2.544 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; Sensor2     ; -0.500       ; 4.377      ; 1.333      ;
+; -2.195 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 3.200      ; 0.505      ;
+; -2.194 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 3.199      ; 0.505      ;
+; -2.194 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 3.199      ; 0.505      ;
+; -2.194 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 3.199      ; 0.505      ;
+; -2.071 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 3.076      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 3.075      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 3.075      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 3.075      ; 0.505      ;
+; -1.773 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 3.201      ; 0.928      ;
+; -1.755 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 3.200      ; 0.945      ;
+; -1.738 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 3.201      ; 0.963      ;
+; -1.728 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 3.559      ; 1.331      ;
+; -1.649 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 3.077      ; 0.928      ;
+; -1.631 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 3.076      ; 0.945      ;
+; -1.614 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 3.077      ; 0.963      ;
+; -1.604 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 3.435      ; 1.331      ;
+; -1.379 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 2.841      ; 0.962      ;
+; -1.346 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 3.201      ; 1.355      ;
+; -1.255 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 2.717      ; 0.962      ;
+; -1.222 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 3.077      ; 1.355      ;
+; -0.631 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 2.418      ; 1.287      ;
+; -0.507 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 2.294      ; 1.287      ;
+; -0.447 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.452      ; 0.505      ;
+; -0.447 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.452      ; 0.505      ;
+; -0.446 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.451      ; 0.505      ;
+; -0.446 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.451      ; 0.505      ;
+; -0.446 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.451      ; 0.505      ;
+; -0.390 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.395      ; 0.505      ;
+; -0.390 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.395      ; 0.505      ;
+; -0.389 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.394      ; 0.505      ;
+; -0.389 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.394      ; 0.505      ;
+; -0.389 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.394      ; 0.505      ;
+; -0.026 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.453      ; 0.927      ;
+; -0.025 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.453      ; 0.928      ;
+; -0.023 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.453      ; 0.930      ;
+; -0.004 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.452      ; 0.948      ;
+; 0.010  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.452      ; 0.962      ;
+; 0.031  ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.396      ; 0.927      ;
+; 0.032  ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.396      ; 0.928      ;
+; 0.034  ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.396      ; 0.930      ;
+; 0.053  ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.395      ; 0.948      ;
+; 0.067  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.395      ; 0.962      ;
+; 0.347  ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; Sensor2     ; -0.500       ; 1.458      ; 1.305      ;
+; 0.387  ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; Sensor2     ; -0.500       ; 1.446      ; 1.333      ;
+; 0.404  ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; Sensor2     ; -0.500       ; 1.401      ; 1.305      ;
+; 0.444  ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; Sensor2     ; -0.500       ; 1.389      ; 1.333      ;
+; 1.177  ; Sensor1                           ; inst2                             ; Sensor1      ; Sensor2     ; 0.000        ; 4.014      ; 5.412      ;
+; 1.677  ; Sensor1                           ; inst2                             ; Sensor1      ; Sensor2     ; -0.500       ; 4.014      ; 5.412      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Sensor1'                                                                                                                                      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.254 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.259      ; 0.505      ;
+; -3.254 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.259      ; 0.505      ;
+; -3.253 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.258      ; 0.505      ;
+; -3.253 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.258      ; 0.505      ;
+; -3.253 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.258      ; 0.505      ;
+; -2.853 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 3.858      ; 0.505      ;
+; -2.833 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.260      ; 0.927      ;
+; -2.832 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.260      ; 0.928      ;
+; -2.830 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.260      ; 0.930      ;
+; -2.811 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.259      ; 0.948      ;
+; -2.797 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.259      ; 0.962      ;
+; -2.729 ; Master_slave_t_ff:inst34|inst6~1  ; Master_slave_t_ff:inst34|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 3.734      ; 0.505      ;
+; -2.460 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; Sensor1     ; -0.500       ; 4.265      ; 1.305      ;
+; -2.420 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; Sensor1     ; -0.500       ; 4.253      ; 1.333      ;
+; -2.071 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 3.076      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 3.075      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 3.075      ; 0.505      ;
+; -2.070 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 3.075      ; 0.505      ;
+; -1.947 ; Master_slave_t_ff:inst33|inst10~1 ; Master_slave_t_ff:inst33|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 2.952      ; 0.505      ;
+; -1.946 ; Master_slave_t_ff:inst31|inst6~1  ; Master_slave_t_ff:inst31|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 2.951      ; 0.505      ;
+; -1.946 ; Master_slave_t_ff:inst37|inst10~1 ; Master_slave_t_ff:inst37|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 2.951      ; 0.505      ;
+; -1.946 ; Master_slave_t_ff:inst47|inst10~1 ; Master_slave_t_ff:inst47|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 2.951      ; 0.505      ;
+; -1.649 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 3.077      ; 0.928      ;
+; -1.631 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 3.076      ; 0.945      ;
+; -1.614 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 3.077      ; 0.963      ;
+; -1.604 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 3.435      ; 1.331      ;
+; -1.525 ; Master_slave_t_ff:inst47|inst6~1  ; Master_slave_t_ff:inst47|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 2.953      ; 0.928      ;
+; -1.507 ; Master_slave_t_ff:inst33|inst6~1  ; Master_slave_t_ff:inst33|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 2.952      ; 0.945      ;
+; -1.490 ; Master_slave_t_ff:inst31|inst10~1 ; Master_slave_t_ff:inst31|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 2.953      ; 0.963      ;
+; -1.480 ; Master_slave_t_ff:inst32|inst10~1 ; Master_slave_t_ff:inst32|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 3.311      ; 1.331      ;
+; -1.255 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 2.717      ; 0.962      ;
+; -1.222 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 3.077      ; 1.355      ;
+; -1.131 ; Master_slave_t_ff:inst32|inst6~1  ; Master_slave_t_ff:inst32|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 2.593      ; 0.962      ;
+; -1.098 ; Master_slave_t_ff:inst37|inst6~1  ; Master_slave_t_ff:inst37|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 2.953      ; 1.355      ;
+; -0.507 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 2.294      ; 1.287      ;
+; -0.383 ; Master_slave_t_ff:inst34|inst10~1 ; Master_slave_t_ff:inst34|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 2.170      ; 1.287      ;
+; -0.323 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.328      ; 0.505      ;
+; -0.323 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.328      ; 0.505      ;
+; -0.322 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.327      ; 0.505      ;
+; -0.322 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.327      ; 0.505      ;
+; -0.322 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.327      ; 0.505      ;
+; -0.266 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.271      ; 0.505      ;
+; -0.266 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.271      ; 0.505      ;
+; -0.265 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.270      ; 0.505      ;
+; -0.265 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.270      ; 0.505      ;
+; -0.265 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.270      ; 0.505      ;
+; 0.098  ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.329      ; 0.927      ;
+; 0.099  ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.329      ; 0.928      ;
+; 0.101  ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.329      ; 0.930      ;
+; 0.120  ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.328      ; 0.948      ;
+; 0.134  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.328      ; 0.962      ;
+; 0.155  ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.272      ; 0.927      ;
+; 0.156  ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.272      ; 0.928      ;
+; 0.158  ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.272      ; 0.930      ;
+; 0.177  ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.271      ; 0.948      ;
+; 0.191  ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.271      ; 0.962      ;
+; 0.471  ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; Sensor1     ; -0.500       ; 1.334      ; 1.305      ;
+; 0.511  ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; Sensor1     ; -0.500       ; 1.322      ; 1.333      ;
+; 0.528  ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; Sensor1     ; -0.500       ; 1.277      ; 1.305      ;
+; 0.568  ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; Sensor1     ; -0.500       ; 1.265      ; 1.333      ;
+; 1.754  ; Sensor2                           ; inst4                             ; Sensor2      ; Sensor1     ; 0.000        ; 4.224      ; 6.199      ;
+; 2.254  ; Sensor2                           ; inst4                             ; Sensor2      ; Sensor1     ; -0.500       ; 4.224      ; 6.199      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'inst2'                                                                                                                                       ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.601 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.404      ; 0.505      ;
+; 0.601 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.404      ; 0.505      ;
+; 0.602 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.403      ; 0.505      ;
+; 0.602 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.403      ; 0.505      ;
+; 0.602 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.403      ; 0.505      ;
+; 1.022 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.405      ; 0.927      ;
+; 1.023 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.405      ; 0.928      ;
+; 1.025 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.405      ; 0.930      ;
+; 1.044 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.404      ; 0.948      ;
+; 1.058 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.404      ; 0.962      ;
+; 1.395 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; inst2        ; inst2       ; -0.500       ; 0.410      ; 1.305      ;
+; 1.435 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; inst2        ; inst2       ; -0.500       ; 0.398      ; 1.333      ;
+; 3.532 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.527     ; 0.505      ;
+; 3.532 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.527     ; 0.505      ;
+; 3.533 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.528     ; 0.505      ;
+; 3.533 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.528     ; 0.505      ;
+; 3.533 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.528     ; 0.505      ;
+; 3.589 ; Master_slave_t_ff:inst23|inst6~1  ; Master_slave_t_ff:inst23|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.584     ; 0.505      ;
+; 3.589 ; Master_slave_t_ff:inst25|inst10~1 ; Master_slave_t_ff:inst25|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.584     ; 0.505      ;
+; 3.590 ; Master_slave_t_ff:inst28|inst6~1  ; Master_slave_t_ff:inst28|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.585     ; 0.505      ;
+; 3.590 ; Master_slave_t_ff:inst24|inst6~1  ; Master_slave_t_ff:inst24|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.585     ; 0.505      ;
+; 3.590 ; Master_slave_t_ff:inst29|inst10~1 ; Master_slave_t_ff:inst29|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.585     ; 0.505      ;
+; 3.953 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.526     ; 0.927      ;
+; 3.954 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.526     ; 0.928      ;
+; 3.956 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.526     ; 0.930      ;
+; 3.975 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.527     ; 0.948      ;
+; 3.989 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.527     ; 0.962      ;
+; 4.010 ; Master_slave_t_ff:inst29|inst6~1  ; Master_slave_t_ff:inst29|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.583     ; 0.927      ;
+; 4.011 ; Master_slave_t_ff:inst28|inst10~1 ; Master_slave_t_ff:inst28|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.583     ; 0.928      ;
+; 4.013 ; Master_slave_t_ff:inst24|inst10~1 ; Master_slave_t_ff:inst24|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.583     ; 0.930      ;
+; 4.032 ; Master_slave_t_ff:inst25|inst6~1  ; Master_slave_t_ff:inst25|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.584     ; 0.948      ;
+; 4.046 ; Master_slave_t_ff:inst23|inst10~1 ; Master_slave_t_ff:inst23|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.584     ; 0.962      ;
+; 4.326 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor2      ; inst2       ; -0.500       ; -2.521     ; 1.305      ;
+; 4.366 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; -2.533     ; 1.333      ;
+; 4.383 ; Master_slave_t_ff:inst27|inst10~1 ; Master_slave_t_ff:inst27|inst6~1  ; Sensor1      ; inst2       ; -0.500       ; -2.578     ; 1.305      ;
+; 4.423 ; Master_slave_t_ff:inst27|inst6~1  ; Master_slave_t_ff:inst27|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; -2.590     ; 1.333      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'inst2'                                                                                                                                    ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.735 ; Sensor2                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor2      ; inst2       ; 0.500        ; 1.507      ; 5.988      ;
+; -7.611 ; Sensor1                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor1      ; inst2       ; 0.500        ; 1.507      ; 5.864      ;
+; -7.235 ; Sensor2                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor2      ; inst2       ; 1.000        ; 1.507      ; 5.988      ;
+; -7.111 ; Sensor1                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor1      ; inst2       ; 1.000        ; 1.507      ; 5.864      ;
+; -5.248 ; Master_slave_t_ff:inst22|inst10~1 ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; 1.000        ; 0.000      ; 2.494      ;
+; -3.756 ; inst2                             ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; 0.500        ; 1.507      ; 2.385      ;
+; -3.256 ; inst2                             ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; 1.000        ; 1.507      ; 2.385      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'inst2'                                                                                                                                    ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.098 ; inst2                             ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; 0.000        ; 1.507      ; 1.981      ;
+; 0.598 ; inst2                             ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; -0.500       ; 1.507      ; 1.981      ;
+; 2.494 ; Master_slave_t_ff:inst22|inst10~1 ; Master_slave_t_ff:inst22|inst10~1 ; inst2        ; inst2       ; 0.000        ; 0.000      ; 2.494      ;
+; 3.029 ; Sensor2                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor2      ; inst2       ; 0.000        ; 1.507      ; 4.536      ;
+; 3.086 ; Sensor1                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor1      ; inst2       ; 0.000        ; 1.507      ; 4.593      ;
+; 3.529 ; Sensor2                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor2      ; inst2       ; -0.500       ; 1.507      ; 4.536      ;
+; 3.586 ; Sensor1                           ; Master_slave_t_ff:inst22|inst10~1 ; Sensor1      ; inst2       ; -0.500       ; 1.507      ; 4.593      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst2      ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; Sensor2    ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; inst2      ; Sensor1  ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; Sensor1  ; 0        ; 12       ; 12       ; 0        ;
+; Sensor2    ; Sensor1  ; 1        ; 13       ; 12       ; 0        ;
+; inst2      ; Sensor2  ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; Sensor2  ; 1        ; 13       ; 12       ; 0        ;
+; Sensor2    ; Sensor2  ; 0        ; 12       ; 12       ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst2      ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; Sensor2    ; inst2    ; 0        ; 6        ; 6        ; 0        ;
+; inst2      ; Sensor1  ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; Sensor1  ; 0        ; 12       ; 12       ; 0        ;
+; Sensor2    ; Sensor1  ; 1        ; 13       ; 12       ; 0        ;
+; inst2      ; Sensor2  ; 0        ; 6        ; 6        ; 0        ;
+; Sensor1    ; Sensor2  ; 1        ; 13       ; 12       ; 0        ;
+; Sensor2    ; Sensor2  ; 0        ; 12       ; 12       ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst2      ; inst2    ; 3        ; 2        ; 0        ; 0        ;
+; Sensor1    ; inst2    ; 3        ; 3        ; 0        ; 0        ;
+; Sensor2    ; inst2    ; 4        ; 3        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; inst2      ; inst2    ; 3        ; 2        ; 0        ; 0        ;
+; Sensor1    ; inst2    ; 3        ; 3        ; 0        ; 0        ;
+; Sensor2    ; inst2    ; 4        ; 3        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 48    ; 48   ;
+; Unconstrained Output Ports      ; 24    ; 24   ;
+; Unconstrained Output Port Paths ; 612   ; 612  ;
++---------------------------------+-------+------+
+
+
++----------------------------------------+
+; Clock Status Summary                   ;
++---------+---------+------+-------------+
+; Target  ; Clock   ; Type ; Status      ;
++---------+---------+------+-------------+
+; Sensor1 ; Sensor1 ; Base ; Constrained ;
+; Sensor2 ; Sensor2 ; Base ; Constrained ;
+; inst2   ; inst2   ; Base ; Constrained ;
++---------+---------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Sensor1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Sensor2    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; BIN0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN4        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN5        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN6        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN7        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DA0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DA1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DB0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DB1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DC0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DC1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DD0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DD1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DDP0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DDP1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DE0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DE1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DF0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DF1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DG0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DG1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Sensor1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Sensor2    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; BIN0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN4        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN5        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN6        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BIN7        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DA0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DA1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DB0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DB1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DC0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DC1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DD0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DD1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DDP0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DDP1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DE0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DE1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DF0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DF1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DG0         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DG1         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition
+    Info: Processing started: Thu Sep  8 17:35:25 2022
+Info: Command: quartus_sta RVC -c RVC
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): The Timing Analyzer is analyzing 25 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RVC.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Sensor1 Sensor1
+    Info (332105): create_clock -period 1.000 -name Sensor2 Sensor2
+    Info (332105): create_clock -period 1.000 -name inst2 inst2
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "inst2|combout"
+    Warning (332126): Node "inst2|dataa"
+Warning (332125): Found combinational loop of 6 nodes
+    Warning (332126): Node "inst30|inst6~1|combout"
+    Warning (332126): Node "inst30|inst6~1|datab"
+    Warning (332126): Node "inst30|inst10~1|dataa"
+    Warning (332126): Node "inst30|inst10~1|combout"
+    Warning (332126): Node "inst30|inst10~1|datab"
+    Warning (332126): Node "inst30|inst6~1|dataa"
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.455
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.455             -83.772 inst2 
+    Info (332119):    -7.080            -121.086 Sensor1 
+    Info (332119):    -6.956            -119.705 Sensor2 
+Info (332146): Worst-case hold slack is -3.378
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.378             -58.842 Sensor2 
+    Info (332119):    -3.254             -55.866 Sensor1 
+    Info (332119):     0.601               0.000 inst2 
+Info (332146): Worst-case recovery slack is -7.735
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.735              -7.735 inst2 
+Info (332146): Worst-case removal slack is 0.098
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.098               0.000 inst2 
+Info (332146): Worst-case minimum pulse width slack is -2.576
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.576            -266.053 Sensor2 
+    Info (332119):    -2.576            -252.659 Sensor1 
+    Info (332119):     0.096               0.000 inst2 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4692 megabytes
+    Info: Processing ended: Thu Sep  8 17:35:30 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
+
+

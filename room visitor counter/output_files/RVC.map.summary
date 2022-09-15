@@ -1,0 +1,9 @@
+Analysis & Synthesis Status : Successful - Thu Sep  8 17:35:15 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 Patches 0.02i SJ Lite Edition
+Revision Name : RVC
+Top-level Entity Name : RVCcounter
+Family : MAX II
+Total logic elements : 158
+Total pins : 26
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
