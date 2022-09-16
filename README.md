@@ -6,7 +6,7 @@ the number of people present in a room. It uses IR receiver diodes to track move
 7 segment displays and LED bar array to display the number in decimal up to 99 and binary up to 128.
   
 ![rvc falstad simulation image ](https://user-images.githubusercontent.com/93152842/190582340-0d055351-ac4e-408a-bbf1-7210c309ace9.png)
-**Falstad**
+*A circuit simulation of my project using the Falstad Circuit Simulator Applet*
 
 Flaws in the falstad simulation:
 - JKFFs are used in the simulation for both frequency counters. In reality, master slave JKFFs must be used
