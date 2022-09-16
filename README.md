@@ -1,4 +1,4 @@
-# Bidirectional-room-visitor-counter
+# Bidirectional-visitor-counter
 A bidirectional room visitor counter using schematic capture and AHDL on Intel Quartus Prime using an Altera CPLD
 
 Thank you for going over this project!
