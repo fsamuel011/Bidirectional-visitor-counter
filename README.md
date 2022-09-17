@@ -4,7 +4,11 @@ A bidirectional room visitor counter using schematic capture and AHDL on Intel Q
 This bidirectional room visitor counter project uses AHDL and schematic capture to determine
 the number of people present in a room. It uses IR receiver diodes to track movement and 
 7 segment displays and LED bar array to display the number in decimal up to 99 and binary up to 128.
-  
+
+![IMG-2269](https://user-images.githubusercontent.com/93152842/190866955-a8e2e8e3-35f2-4f4e-ba84-285f11c20661.JPG)
+
+* The first version of my bidirectional visitor counter! *
+
 ![rvc falstad simulation image ](https://user-images.githubusercontent.com/93152842/190582340-0d055351-ac4e-408a-bbf1-7210c309ace9.png)
 *A circuit simulation of my project using the Falstad Circuit Simulator Applet*
 
