@@ -7,14 +7,16 @@ the number of people present in a room. It uses IR receiver diodes to track move
 
 ![IMG-2269](https://user-images.githubusercontent.com/93152842/190866955-a8e2e8e3-35f2-4f4e-ba84-285f11c20661.JPG)
 
-* The first version of my bidirectional visitor counter! *
+*The first version of my bidirectional visitor counter!*
+
+## Diagrams
 
 ![rvc falstad simulation image ](https://user-images.githubusercontent.com/93152842/190582340-0d055351-ac4e-408a-bbf1-7210c309ace9.png)
-*A circuit simulation of my project using the Falstad Circuit Simulator Applet*
+*A circuit simulation of my project using the [Falstad Circuit Simulator Applet](https://www.falstad.com/circuit/)*
 
 Flaws in the falstad simulation:
 - JKFFs are used in the simulation for both frequency counters. In reality, master slave JKFFs must be used
   to account for the race around condition and uncontrolled toggling in normal JKFFs.
-- the simulation's 7 segment displays automatically use hex digits to count up to FF in hexadecimal 
+- The simulation's 7 segment displays automatically use hex digits to count up to FF in hexadecimal 
   (255 in decimal). In reality, the LEDs in each common anode 7-segment display will need to be 
-  custom coded to display up to 99 in decimal
+  custom coded to display up to 99 in decimal.
