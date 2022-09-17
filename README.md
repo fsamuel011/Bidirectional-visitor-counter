@@ -7,7 +7,7 @@ the number of people present in a room. It uses IR receiver diodes to track move
 
 ![IMG-2269](https://user-images.githubusercontent.com/93152842/190866955-a8e2e8e3-35f2-4f4e-ba84-285f11c20661.JPG)
 
-*The first version of my bidirectional visitor counter!*
+*The first version of my bidirectional visitor counter! I initially used an 4 SPDT Grayhill Switch to test my inputs before switching to the IR receiver diodes.*
 
 ## Diagrams
 
