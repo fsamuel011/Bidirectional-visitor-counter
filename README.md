@@ -13,7 +13,7 @@ the number of people present in a room. It uses IR receiver diodes to track move
 
 ![rvc falstad simulation image ](https://user-images.githubusercontent.com/93152842/190582340-0d055351-ac4e-408a-bbf1-7210c309ace9.png)
 
-*A circuit simulation of my project using the [Falstad Circuit Simulator Applet](https://www.falstad.com/circuit/). You can test the simulation [here](https://tinyurl.com/2f6r9hfl).*
+*A circuit simulation of my project using the [Falstad Circuit Simulator Applet](https://www.falstad.com/circuit/). 8 logic outputs were shown after each D flip flip to test the direction mechanism. You can test the simulation [here](https://tinyurl.com/2f6r9hfl).*
 
 Flaws in the falstad simulation:
 - JKFFs are used in the simulation for both frequency counters. In reality, master slave JKFFs must be used
