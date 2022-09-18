@@ -13,8 +13,8 @@ This bidirectional room visitor counter project uses AHDL and schematic capture 
 
 *A circuit simulation using the [Falstad Circuit Simulator Applet](https://www.falstad.com/circuit/). You can test the simulation [here](https://tinyurl.com/2f6r9hfl).*
 
-I made some circuit alterations for the Falstad simulation, given the constraints of its implementation on Intel Quartus Prime. 
-- I directly connected two switches to my D flip flops to test my inputs for both directions. On the breadboard, IR receiver and emitter diodes were wired and debounced to detect movement and produce clean edges on signals.
-- After each D flip flop, 8 logic outputs were shown to display the number of people who have passed in either direction separately. This was not done on the breadboard circuit.
-- JKFFs are used in the simulation for both frequency counters. In reality, master slave JKFFs must be used to account for the race around condition and uncontrolled toggling in normal JKFFs.
-- The simulation's 7 segment displays automatically use hex digits to count up to FF in hexadecimal (255 in decimal). In reality, the LEDs in each common anode 7-segment display will need to be custom coded to display up to 99 in decimal.
+Given the constraints of its implementation on Intel Quartus Prime, circuit adjustments were made for the Falstad simulation. 
+
+I directly connected two switches to my D flip flops to test my inputs for both directions. IR receiver and emitter diodes were instead wired and debounced on the breadboard to detect movement and produce clean edges on signals. I also added 8 logic outputs after each D flip flop for the simulation to display the number of people who have passed in either direction separately. This was not done on the breadboard circuit. 
+
+The simulation's 7 segment displays automatically use hex digits to count up to FF in hexadecimal (255 in decimal). In reality, the LEDs in each common anode 7-segment display had to be custom coded using AHDL on Quartus in order to display up to 99 in decimal. In addition, JK flip flops are used in the simulation for both frequency counters. In the Quartus block diagram, master slave JK flip flops were used to account for the race around condition and uncontrolled toggling in normal JK flip flops.
